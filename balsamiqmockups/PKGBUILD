@@ -1,4 +1,5 @@
 # Maintainer: John K. Luebs <jkl@johnluebs.com>
+# Contributor: Vojtěch Kusý <https://github.com/wojtha>
 
 # I maintain this on github, feel free to submit a pull request to
 # https://github.com/jkl1337/packages-archlinux.git
@@ -22,7 +23,7 @@ sha1sums=('c9f39fc13ac5bfef2a523c870685dd0808220bf6'
           '6f28b1fcc5758cb46c5f149d7896b53bdd027293')
 noextract=("MockupsForDesktop.air")
 install=balsamiqmockups.install
-depends=(adobe-air-sdk desktop-file-utils)
+depends=(adobe-air-sdk desktop-file-utils lib32-libgl)
 makedepends=(unzip)
 conflicts=('balsamiq-mockups')
 
