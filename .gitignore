@@ -6,3 +6,4 @@
 *.tgz
 *.tar.xz
 *.rpm
+.AURINFO
