@@ -1,0 +1,61 @@
+# Maintainer: John K. Luebs <jkluebs@luebsphoto.com>
+
+pkgname=m68k-elf-gcc-base
+pkgver=4.7.3
+pkgrel=3
+pkgdesc="The GNU Compiler Collection"
+arch=(i686 x86_64)
+license=('GPL' 'LGPL')
+url="http://gcc.gnu.org"
+depends=('m68k-elf-binutils' 'libmpc' 'libelf')
+options=(!libtool !emptydirs zipman docs !strip)
+source=(ftp://gcc.gnu.org/pub/gcc/releases/gcc-${pkgver}/gcc-${pkgver}.tar.bz2)
+md5sums=('86f428a30379bdee0224e353ee2f999e')
+
+build() {
+  cd $srcdir/gcc-$pkgver
+
+  export CPPFLAGS=""
+  export CFLAGS="-O2 -pipe"
+  export CXXFLAGS="-O2 -pipe"
+
+  rm -rf build
+  mkdir build
+  cd build
+
+  ../configure --prefix=/usr \
+	--target=m68k-elf \
+	--enable-obsolete \
+	--host=$CHOST \
+	--build=$CHOST \
+	--enable-shared --disable-nls --enable-languages=c --disable-libssp \
+        --with-arch=m68k \
+	--with-local-prefix=/usr/lib/m68k-elf \
+	--with-as=/usr/bin/m68k-elf-as --with-ld=/usr/bin/m68k-elf-ld \
+	--with-newlib \
+	--with-sysroot=/usr/$CHOST/m68k-elf
+
+  make all-gcc all-target-libgcc
+}
+
+package() {
+  cd $srcdir/gcc-$pkgver/build
+
+  export CPPFLAGS=""
+  export CFLAGS="-O2 -pipe"
+  export CXXFLAGS="-O2 -pipe"
+
+  make DESTDIR=$pkgdir install-gcc install-target-libgcc
+
+  rm -f $pkgdir/usr/share/man/man7/fsf-funding.7*
+  rm -f $pkgdir/usr/share/man/man7/gfdl.7*
+  rm -f $pkgdir/usr/share/man/man7/gpl.7*
+  rm -rf $pkgdir/usr/share/info
+
+  cp -r $pkgdir/usr/libexec/* $pkgdir/usr/lib/
+  rm -rf $pkgdir/usr/libexec
+
+  # strip it manually
+  strip $pkgdir/usr/bin/* 2>/dev/null || true
+  find $pkgdir/usr/lib -type f -exec m68k-elf-strip --strip-debug --strip-unneeded {} \; 2>/dev/null || true
+}
