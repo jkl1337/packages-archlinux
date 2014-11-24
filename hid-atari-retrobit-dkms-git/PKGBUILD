@@ -10,7 +10,6 @@ pkgdesc="kernel module to support useful but broken Retrobit console control ada
 arch=('i686' 'x86_64')
 url="https://github.com/robmcmullen/hid-atari-retrobit"
 license=('GPL')
-groups=('modules')
 depends=('dkms' 'linux-headers')
 makedepends=('git')
 provides=('hid-atari-retrobit')
