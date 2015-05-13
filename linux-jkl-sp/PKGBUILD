@@ -4,7 +4,7 @@
 #pkgbase=linux               # Build stock -ARCH kernel
 pkgbase=linux-jkl-sp  # Build kernel with a different name
 _srcname=linux-3.14
-pkgver=3.14.38
+pkgver=3.14.41
 pkgrel=100
 arch=('i686' 'x86_64')
 url="http://www.kernel.org/"
@@ -26,7 +26,7 @@ source=(https://www.kernel.org/pub/linux/kernel/v3.x/${_srcname}.tar.{xz,sign}
 # https://www.kernel.org/pub/linux/kernel/v3.x/sha256sums.asc
 sha256sums=('61558aa490855f42b6340d1a1596be47454909629327c49a5e4e10268065dffa'
             'SKIP'
-            'f03ac0a2656bb4c7d8532af67b74057f1a0cce1f7d43f5019b18c6edf3a7933a'
+            '64b3131606ff534ee27f61323ca1cc9693545edf4871bdbcb2bfa299ce5efca9'
             'SKIP'
             '7e68ada4d0e79d261b85aba2320f7a67706d51381ffc2b3840967b494a447d15'
             'a1aa3c5bffd7fb0e3ef946b4cedba43dd9700714c079aee8e0532a03f3cd75c9'
