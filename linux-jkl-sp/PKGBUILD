@@ -25,7 +25,7 @@ sha256sums=('becc413cc9e6d7f5cc52a3ce66d65c3725bc1d1cc1001f4ce6c32b69eb188cbd'
             '488ac8f9fb1bcc5670d2222a4f382ca4e4950c4489bc5217c244b787d2ac8974'
             'SKIP'
             '7e68ada4d0e79d261b85aba2320f7a67706d51381ffc2b3840967b494a447d15'
-            '383fa1c847b6b842dc7149950ae9ccfe5945b3165ac5ec059d495e949c865cc8'
+            '64882e40ab9f9ee69cd88a8f1ea810a2f960e5c33f4a770e82463e533c178907'
             '36bec7aa687e990c55f9a7facb3c27404c96e432a9824893bb630e9646de7dae'
             '1256b241cd477b265a3c2d64bdc19ffe3c9bbcee82ea3994c590c2c76e767d99')
 validpgpkeys=('ABAF11C65A2970B130ABE3C479BE3E4300411886' # Linus Torvalds <torvalds@linux-foundation.org>
