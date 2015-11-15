@@ -1,7 +1,7 @@
 pkgbase = balsamiqmockups
 	pkgdesc = The Adobe Air based Mockup client. Not free or open source, there is a 7 day free trial.
 	pkgver = 2.2.28
-	pkgrel = 4
+	pkgrel = 5
 	url = http://balsamiq.com/products/mockups
 	install = balsamiqmockups.install
 	arch = any
